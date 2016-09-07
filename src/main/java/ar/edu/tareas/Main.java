@@ -14,7 +14,7 @@ public class Main {
 
 		Spark.port(9000);
 		Spark.staticFileLocation("/webapp");
-		
-		new TareasController(jsonTransformer).register();
+
+		new TareasController(jsonTransformer, gson).register();
 	}
 }

@@ -3,3 +3,4 @@
 .settings/
 target/
 generated*
+node_modules*

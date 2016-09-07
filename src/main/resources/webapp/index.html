@@ -35,7 +35,7 @@
 <div class="container">
   <div class="page-header">
     <h1>Librer&iacute;a RIA
-      <small>AngularJS + XTRest</small>
+      <small>AngularJS + Spark</small>
     </h1>
   </div>
 
@@ -64,7 +64,7 @@
           <tr data-ng-repeat="tarea in tareasCtrl.tareas | filter:tareaBuscada" class="animate-repeat">
             <td class="col-xs-4">{{tarea.descripcion}}</td>
             <td class="col-xs-2">{{tarea.iteracion}}</td>
-            <td class="col-xs-3">{{tarea.asignatario}}</td>
+            <td class="col-xs-3">{{tarea.asignadoA}}</td>
             <td class="col-xs-2">{{tarea.fecha | date: 'dd/MM/yyyy'}}</td>
             <td class="col-xs-1"><span
               ng-class="{ 'label label-danger' : tarea.porcentajeCumplimiento == 0,
@@ -75,7 +75,7 @@
 
             <td nowrap class="col-xs-2">
               <button type="button" class="btn btn-default" 
-                      aria-label="Cumplir" ng-show="tarea.sePuedeCumplir()">
+                      aria-label="Cumplir" data-ng-click="tareasCtrl.cumplir(tarea)" ng-show="!tarea.estaCumplida()">
                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
               </button>
               <button type="button" class="btn btn-primary" 
@@ -102,6 +102,7 @@
 <!-- código de nuestro ejemplo -->
 <script src="js/tarea.js"></script>
 <script src="js/controllers.js"></script>
+<script src="js/services.js"></script>
 
 </body>
 </html>
